@@ -72,7 +72,7 @@ polities <- polities[polities$PolID != "UsIroqL",]
 
 write.csv(polities, file="polities.csv",  row.names=FALSE)
 polities <- read.csv('polities.csv', header=TRUE)
-NGAs <- levels(polities$NGA)
+NGAs <- levels(as.factor(polities$NGA))
 
 nrep <- 20
 ImpDatRepl <- matrix(NA, nrow=0, ncol=0) 

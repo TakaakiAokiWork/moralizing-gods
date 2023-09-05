@@ -6,7 +6,7 @@ polities <- read.csv('polities.csv', header=TRUE)
 
 dat <- read.table("PC1_traj_merged.csv", sep=",", header=TRUE)
 dat$NGA<-as.character(dat$NGA)
-NGAs <- levels(polities$NGA)
+NGAs <- levels(as.factor(polities$NGA))
 NGAs <- NGAs[NGAs != "Crete"]    #### Remove new NGAs
 NGAs <- NGAs[NGAs != "Galilee"]
 
