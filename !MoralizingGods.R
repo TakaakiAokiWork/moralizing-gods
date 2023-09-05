@@ -42,7 +42,8 @@ library(plyr) #(But maybe shouldn't load this when loading dplyr for confirmator
 
 # Don't rerun this section unless it's a new scrape
 
-setwd("/Users/pesavage/Documents/Research/Oxford Seshat/Data/MoralizingGods")
+#setwd("/Users/pesavage/Documents/Research/Oxford Seshat/Data/MoralizingGods")
+setwd("/home/aoki/Projects/moralizing-gods/")
 Section1 <- "Social Complexity variables"
 Section2 <- "Ritual variables"
 Section3 <- "Religion and Normative Ideology"
