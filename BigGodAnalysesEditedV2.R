@@ -32,7 +32,7 @@ write.csv(out, file="FullRates.csv",  row.names=FALSE)
 
 
 #Full time windows (up to 10,000 years before and after moralizing gods)
-NGAs <- levels(out$NGA)
+NGAs <- levels(as.factor(out$NGA))
 out <- matrix(NA, nrow=0, ncol=5)
 for(i in 1:length(NGAs)){
   dt <- dat[dat$NGA == NGAs[i],]
@@ -118,7 +118,7 @@ write.csv(data, file="PrePostComparisonFull.csv",  row.names=FALSE)
 out <-subset(out, out[,6]<1000) #Removing windows without matching pre-/post-MG rates
 write.csv(out, file="FullRates.csv",  row.names=FALSE)
 out <- read.table("FullRates.csv", sep=",", header=TRUE)
-NGAs <- levels(out$NGA)
+NGAs <- levels(as.factor(out$NGA))
 
 data <- matrix(NA, nrow=0, ncol=15)
 
