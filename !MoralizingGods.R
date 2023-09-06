@@ -56,7 +56,7 @@ Vars <- Vars[Vars[,6]==Section1 | Vars[,6]==Section2 | Vars[,6]==Section3,] # Re
 
 Vars[,1] <- paste(Vars[,2],Vars[,1]) #Creating unique variable/section combinations
 
-polities <- read.csv('polities.csv', header=TRUE)
+polities <- read.csv('polities.orig.csv', header=TRUE)
 polities <- polities[polities$NGA != "Crete",] #### Remove new NGAs
 polities <- polities[polities$NGA != "Galilee",]
 polities <- polities[polities$NGA != "Middle Ganga",]

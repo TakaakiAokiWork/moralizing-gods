@@ -1,5 +1,5 @@
 # Checks Soc Complx data from exportdat.csv for error
-polities <- read.csv('polities.csv', header=TRUE)
+polities <- read.csv('polities.orig.csv', header=TRUE)
 polities <- polities[polities$Dupl=="n",]
 Vars <- as.matrix(read.csv('variables.csv', header=TRUE))
 SCdat <- matrix(nrow = 0, ncol = 0)
