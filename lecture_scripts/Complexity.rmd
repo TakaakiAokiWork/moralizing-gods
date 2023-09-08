@@ -1,0 +1,40 @@
+---
+title: "ComplexityVsTime"
+output: pdf_document
+date: "2023-09-08"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Load Data
+```{r}
+df = read_csv("../TimeNorm.csv")
+summary(df)
+head(df)
+```
+
+## List of ‘natural geographical areas’ (NGAs)
+```{r}
+unique(df$OriginalNGA)
+```
+
+## Select "Upper Egypt"
+```{r}
+df_egypt = df |> filter(NGA == "Upper Egypt")
+df_egypt
+```
+## Moralizing Gods
+```{r}
+mg_egypt = read_csv("../PrePostComparison.csv") |> filter(NGA == "Upper Egypt")
+mg_egypt
+```
+
+
+## Plot
+```{r}
+ggplot(df_egypt, aes(x =Time, y = Mean)) + geom_ribbon(aes(ymin = Lower, ymax = Upper), fill = "grey60", alpha=0.5 ) + geom_line(color="blue") + geom_vline(aes(xintercept = mg_egypt$MGAppear), color="red") + theme_classic()
+```
+

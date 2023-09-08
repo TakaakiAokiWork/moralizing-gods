@@ -1,0 +1,34 @@
+---
+title: "PCA"
+output: pdf_document
+date: "2023-09-08"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Load data
+
+```{r}
+df = read_csv("../PCA_data_01.csv")
+summary(df)
+```
+
+## Correlation
+
+```{r}
+library(GGally)
+ggpairs(df) + theme_classic()
+```
+
+## PCA
+
+```{r}
+library(ggfortify)
+
+pca_res <- prcomp(df, scale. = TRUE)
+
+autoplot(pca_res) + theme_classic()
+```
