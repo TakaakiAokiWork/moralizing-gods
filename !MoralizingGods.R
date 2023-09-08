@@ -137,6 +137,7 @@ PropVar <- matrix(NA,0,9)
 for(irep in 1:nrep){
   print(irep)
   ImpDat <- ImpDatRepl[ImpDatRepl$irep==irep,5:13] #Replace "5:13" with "5:8" and "9:13" for confirmatory analyses (changing "9" in "Rotations <- matrix(NA,0,9)" and "PropVar <- matrix(NA,0,9)" to "4" or "5" as appropriate)
+  write.csv(ImpDat, file=sprintf("PCA_data_%02d.csv", irep),  row.names=FALSE)
   res <- prcomp(ImpDat, scale=TRUE)
   print(summary(res))
   PCA<-predict(res)
